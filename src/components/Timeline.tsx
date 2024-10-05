@@ -16,14 +16,15 @@ function Timeline() {
             className="vertical-timeline-element--work"
             contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
             contentArrowStyle={{ borderRight: '7px solid  white' }}
-            date="2022 - present"
+            date="May 2024  - Present"
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Technology Consultant</h3>
-            <h4 className="vertical-timeline-element-subtitle">Dallas, TX</h4>
+            <h3 className="vertical-timeline-element-title">Software Developer</h3>
+            <h4 className="vertical-timeline-element-subtitle">Ottawa, CA </h4>
+            <h4 className="vertical-timeline-element-subtitle">Trend Micro Technologies</h4>
             <p>
-              Full-stack Web Development, GenAI/LLM, Project Management, Business Development
+              Application Development , Deployment operations , Cloud Services , Web development
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -32,10 +33,11 @@ function Timeline() {
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Full Stack Engineer</h3>
-            <h4 className="vertical-timeline-element-subtitle">Laie, HI</h4>
+            <h3 className="vertical-timeline-element-title">Software Development Intern</h3>
+            <h4 className="vertical-timeline-element-subtitle">Ottawa , CA</h4>
+            <h4 className="vertical-timeline-element-subtitle">Ericsson Canada Ltd</h4>
             <p>
-              Frontend Development, Backend Development, User Experience, Team Leading
+              Frontend Development, Backend Development, Database Management , Requirement Gathering, Microsoft Azure.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
