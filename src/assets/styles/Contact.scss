@@ -1,11 +1,13 @@
-.contact_wrapper svg {
-  font-size: 1em;
-  vertical-align: middle;
-  margin-right: 5px;
-}
-
 .contact-form {
   padding-top: 20px;
+
+  .MuiTextField-root {
+    margin-bottom: 15px;  // Add some space between inputs
+    .MuiInputBase-input {
+      color: #000;  // Ensure text color is black (or something visible)
+      background-color: white;  // Ensure background is white
+    }
+  }
 
   button {
     float: right;
@@ -23,7 +25,7 @@
   }
 }
 
-label {
+.label {
   font-size: 1.2rem;
   font-family: 'DomaineDispNar-Medium', sans-serif;
 }
