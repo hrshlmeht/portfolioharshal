@@ -1,113 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../assets/styles/Contact.scss';  // Importing SCSS correctly
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import SendIcon from '@mui/icons-material/Send';
-import TextField from '@mui/material/TextField';
-const emailjs = require('@emailjs/browser');
 
-function Contact() {
-
-  const [name, setName] = useState<string>('');
-  const [email, setEmail] = useState<string>('');
-  const [message, setMessage] = useState<string>('');
-
-  const [nameError, setNameError] = useState<boolean>(false);
-  const [emailError, setEmailError] = useState<boolean>(false);
-  const [messageError, setMessageError] = useState<boolean>(false);
-
-  const sendEmail = (e: any) => {
-    e.preventDefault();
-
-    setNameError(name === '');
-    setEmailError(email === '');
-    setMessageError(message === '');
-
-    if (name !== '' && email !== '' && message !== '') {
-      var templateParams = {
-        name: name,
-        email: email,
-        message: message
-      };
-
-      emailjs.send('service_id', 'template_id', templateParams, 'api_key').then(
-        (response: any) => {  // Type as `any` to avoid the TypeScript error
-          console.log('SUCCESS!', response.status, response.text);
-        },
-        (error: Error) => {
-          console.log('FAILED...', error);
-        }
-      );
-      setName('');
-      setEmail('');
-      setMessage('');
-    }
-  };
-
+const Contact = () => {
   return (
-    <div id="contact">
-      <div className="items-container">
-        <div className="contact_wrapper">
-          <h1>Contact Me</h1>
-          <p>Got a project waiting to be realized? Let's collaborate and make it happen!</p>
-          <Box
-            component="form"
-            noValidate
-            autoComplete="off"
-            className='contact-form'
-          >
-            <div className='form-flex'>
-              <TextField
-                required
-                id="outlined-required"
-                label="Your Name"
-                placeholder="What's your name?"
-                value={name}
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}
-                error={nameError}
-                helperText={nameError ? "Please enter your name" : ""}
-                style={{ color: '#000', backgroundColor: '#fff', width: '100%' }}  // Add explicit styles
-              />
-              <TextField
-                required
-                id="outlined-required"
-                label="Email / Phone"
-                placeholder="How can I reach you?"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-                error={emailError}
-                helperText={emailError ? "Please enter your email or phone number" : ""}
-                style={{ color: '#000', backgroundColor: '#fff', width: '100%' }}  // Add explicit styles
-              />
-            </div>
-            <TextField
-              required
-              id="outlined-multiline-static"
-              label="Message"
-              placeholder="Send me any inquiries or questions"
-              multiline
-              rows={10}
-              className="body-form"
-              value={message}
-              onChange={(e) => {
-                setMessage(e.target.value);
-              }}
-              error={messageError}
-              helperText={messageError ? "Please enter the message" : ""}
-              style={{ color: '#000', backgroundColor: '#fff', width: '100%' }}  // Add explicit styles
-            />
-            <Button variant="contained" endIcon={<SendIcon />} onClick={sendEmail}>
-              Send
-            </Button>
-          </Box>
-        </div>
+    <div className="contact-section">
+      {/* Resume Button */}
+      <a 
+        href="https://drive.google.com/file/d/1P60dS5t49sog-r2AuhWr_I_DgAIP9nzU/view?usp=drive_link" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="resume-button"
+      >
+        View Resume
+      </a>
+
+      {/* Typewriter text */}
+      <div className="typewriter-container">
+        <p className="typewriter-text">
+          If you want to discuss more, feel free to drop an email at 
+          <a href="mailto:harshalmehta1998@gmail.com" className="email-link"> harshalmehta1998@gmail.com</a>.
+        </p>
       </div>
     </div>
   );
-}
+};
 
 export default Contact;

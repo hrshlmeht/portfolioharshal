@@ -1,50 +1,73 @@
-.contact-form {
-  padding-top: 20px;
-
-  .MuiTextField-root {
-    margin-bottom: 15px;  // Add some space between inputs
-    .MuiInputBase-input {
-      color: #000;  // Ensure text color is black (or something visible)
-      background-color: white;  // Ensure background is white
-    }
-  }
-
-  button {
-    float: right;
-    background-color: white;
-    color: #050f0b;
-  }
-
-  button:hover {
-    background-color: #5000ca;
-    color: white;
-  }
-
-  fieldset {
-    background-color: white;
-  }
-}
-
-.label {
-  font-size: 1.2rem;
-  font-family: 'DomaineDispNar-Medium', sans-serif;
-}
-
-.form-flex {
+.contact-section {
+  padding: 20px;
   display: flex;
-  gap: 15px;
-  padding-bottom: 15px;
-}
-
-.form-flex .MuiFormControl-root {
+  justify-content: center;  // Center horizontally
+  align-items: center;      // Center vertically
+  text-align: center;       // Center the text horizontally
+  flex-direction: column;   // Stack items vertically
+  gap: 20px;
   width: 100%;
 }
 
-form {
-  width: 100% !important;
+/* Resume Button */
+.resume-button {
+  background-color: #5000ca;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
 }
 
-.body-form {
-  width: 100% !important;
-  margin-bottom: 15px !important;
+.resume-button:hover {
+  background-color: #6200ea;
+  transform: scale(1.05);
+}
+
+/* Typewriter text container */
+.typewriter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 800px;  // Add a max-width for better control on larger screens
+}
+
+/* Typewriter text styling */
+.typewriter-text {
+  font-size: 1.25rem;  // Larger font size
+  color: white;     // Main text color
+  font-family: 'DomaineDispNar-Medium', sans-serif;
+  white-space: nowrap;  // Prevent text from wrapping
+  overflow: hidden;     // Hide overflowing text
+  border-right: 4px solid white;  // Blinking cursor effect
+  display: inline-block;   // Ensure text stays on one line
+  animation: typing 4s steps(60) forwards, blink 0.75s step-end infinite;
+  width: 100%;           // Ensure it uses 100% of the container's width
+  max-width: 100%;       // Make sure it doesn't overflow
+}
+
+.email-link {
+  color: #5000ca;   // Violet color for the email link
+  text-decoration: none;  // Remove underline from the email link
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;  // Make sure it fills the available width
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }
